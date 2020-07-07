@@ -18,6 +18,12 @@ import EditTicket from './components/EditTicket';
 // localStorage.clear(); >>> to clear token
 
 function App() {
+
+  const logout = () => {
+    localStorage.removeItem('token')
+    window.location.reload()
+  }
+
   return (
     <>
       <Jumbotron fluid style={{backgroundColor:'#007bff'}}>
@@ -40,6 +46,9 @@ function App() {
                   Log-in
                 </Button>
             </Link>
+            <button onClick={logout}>
+              Logout
+            </button>
           </Col>
           <Col style={{display:'flex',flexDirection:'column', alignItems:'center'}}>
             <p>New to Help Desk?</p>
